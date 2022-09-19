@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AnimationView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbo-BA-3Nk">
+                                <rect key="frame" x="30" y="298" width="354" height="300"/>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="33u-h8-vuM"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="8W2-Uj-yz1" appends="YES" id="oPv-sj-99T"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wbo-BA-3Nk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="JAx-iD-qte"/>
+                            <constraint firstItem="wbo-BA-3Nk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QpW-87-ihd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wbo-BA-3Nk" secondAttribute="trailing" constant="30" id="q0f-nN-5ED"/>
+                            <constraint firstItem="wbo-BA-3Nk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tlF-gO-etf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cardView" destination="wbo-BA-3Nk" id="lZp-9R-SDi"/>
+                        <segue destination="yMB-6m-Kzi" kind="presentation" identifier="reveal" modalPresentationStyle="fullScreen" id="g5S-Yc-sMW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8W2-Uj-yz1">
+                    <connections>
+                        <action selector="handleTap" destination="BYZ-38-t0r" id="Lak-FD-E0Z"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="132" y="90"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="tPu-m9-IUF">
+            <objects>
+                <viewController id="yMB-6m-Kzi" customClass="RevealViewController" customModule="AnimationView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dgW-Mh-4gJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4d-LP-UK7">
+                                <rect key="frame" x="0.0" y="403" width="414" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="bl7-Am-qrg"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Start Over"/>
+                                <connections>
+                                    <action selector="dismissPressed:" destination="yMB-6m-Kzi" eventType="touchUpInside" id="tpg-Ll-ewS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lpx-AH-xby"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <constraints>
+                            <constraint firstItem="V4d-LP-UK7" firstAttribute="centerY" secondItem="dgW-Mh-4gJ" secondAttribute="centerY" id="DAW-fs-q5d"/>
+                            <constraint firstItem="lpx-AH-xby" firstAttribute="trailing" secondItem="V4d-LP-UK7" secondAttribute="trailing" id="r7c-E3-bfN"/>
+                            <constraint firstItem="V4d-LP-UK7" firstAttribute="centerX" secondItem="dgW-Mh-4gJ" secondAttribute="centerX" id="u0T-IP-ZkD"/>
+                            <constraint firstItem="V4d-LP-UK7" firstAttribute="leading" secondItem="lpx-AH-xby" secondAttribute="leading" id="vuN-25-xZf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Lr-Jn-qH5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1020" y="97"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  AnimationView
 //
-//  Created by Mayank Mangukiya on 19/09/22.
+//  Created by Shubham Ramani on 19/09/22.
 //
 
 import UIKit
